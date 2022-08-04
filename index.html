@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Calculator</title>
+</head>
+<body>
+  
+  <!-- Calculator -->
+  <div class="calculator-container">
+  
+  <!-- SETTING BUTTON -->
+    <button id="open-setting">
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+  </button>
+  
+    <div id="setting">
+      <button id="history-btn">History</button>
+      <button id="auto-solve-btn">Auto Solve</button>
+      <button id="change-theme-btn">Change Theme</button>
+   </div>
+  
+  <!-- HISTORY -->
+  
+   <div id="history-ul-container">
+     <button id="history-close">Close</button>
+     <button id="history-clear">Clear</button>
+     <ul id="history-ul">
+     </ul>
+   </div>
+      
+  <!-- END OF HISTORY -->
+  
+  
+  <!-- This is where the numbers are displayed -->
+  <div class="recent-container">
+    <ul id="recent-calculated-ul">
+    </ul>
+  </div>
+    
+      <div class="result-container">
+        <p id="problem"></p>
+        <p id="result"></p>
+      </div>
+  <!-- end -->
+  
+  <!-- BUTTONS -->
+  
+  <div class="button-grid">
+    <button onclick="enter('0')" class="zero">0</button>
+    <button onclick="enter('1')" class="one">1</button>
+    <button onclick="enter('2')" class="two">2</button>
+    <button onclick="enter('3')" class="three">3</button>
+    <button onclick="enter('4')" class="four">4</button>
+    <button onclick="enter('5')" class="five">5</button>
+    <button onclick="enter('6')" class="six">6</button>
+    <button onclick="enter('7')" class="seven">7</button>
+    <button onclick="enter('8')" class="eight">8</button>
+    <button onclick="enter('9')" class="nine">9</button>
+  
+    <button onclick="enter('+')" class="add">+</button>
+    <button onclick="enter('-')" class="minus">-</button>
+    <button onclick="enter('*')" class="multiply">×</button>
+    <button onclick="enter('/')" class="divide">÷</button>
+    
+    <button onclick="enter('(')" class="open-parenthesis">(</button>
+    <button onclick="enter(')*')" class="close-parenthesis">)</button>
+    <button onclick="enter('.')" class="dot">.</button>
+    <button onclick="clearInput()" class="clear">AC</button>
+    <button onclick="solve()" class="equal">=</button>
+    <button onclick="del()" class="delete">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-delete"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
+    </button>
+  </div>
+  <!-- end of BUTTONS -->
+ 
+ </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
 
