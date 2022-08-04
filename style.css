@@ -1,0 +1,283 @@
+:root{
+  --mainColor: #D9D9D9;
+  --textColor: #090909;
+  --operatorColor: #CD5108;
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  color: var(--textColor);
+  background-color: var(--textColor);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calculator-container{
+  height: 100%;
+  background-color: var(--mainColor);
+  padding: 2em;
+}
+.recent-container{
+  position: relative;
+  height: 9em;
+  overflow: auto;
+}
+#recent-calculated-ul{
+  position: absolute;
+  bottom: 0;
+}
+
+#recent-calculated-ul li{
+  padding: .2em .5em;
+  list-style: none;
+  font-size: 1.2em;
+  color: #838383;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#problem{
+  height: 2em;
+  width: 15em;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: auto;
+}
+#problem, #result{
+  word-break: break-all;
+  font-size: 1.5em;
+  font-family: monospace;
+  padding: 1em;
+  text-align: right;
+}
+
+.result-container{
+  border-bottom: 1px solid var(--textColor);
+}
+
+button{
+  padding: 1em 1.5em;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  color: var(--textColor)
+}
+
+#setting{
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  padding: .5em 1em;
+  top: 1.13em;
+  right: 3em;
+  background-color: var(--textColor);
+  width: 7em;
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.setting-style{
+  display: flex !important;
+}
+
+#setting button{
+  color: var(--mainColor);
+  padding: .2em 0;
+  font-size: 1em;
+  text-align: left;
+}
+
+/* the button with setting icon */
+#open-setting{
+  position: fixed;
+  top: 1em;
+  right: 2em;
+  padding: .2em .4em .1em .4em;
+  color: var(--mainColor);
+  background-color: var(--textColor);
+  border: 1px solid var(--mainColor);
+  border-radius: 1em;
+  font-family: monospace;
+  z-index: 1;
+}
+#history-ul-container{
+  padding-top: 1em;
+  overflow: auto;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 30%;
+  background-color: var(--mainColor);
+  z-index: 1;
+  border: 1px solid var(--textColor);
+}
+#history-ul{
+  display: flex;
+  flex-direction: column;
+  margin: 1em 2em;
+}
+#history-ul li{
+  word-break: break-all;
+  list-style: none;
+  font-size: 1em;
+  margin-bottom: .5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#history-close, #history-clear{
+  font-family: monospace;
+  font-size: 1em;
+}
+#history-clear{
+  color: red;
+}
+
+.history-toggle{
+  display: block !important;
+}
+
+
+.button-grid{
+  display: grid;
+  grid-template: 
+  'clear delete dot divide '
+  'seven eight nine multiply'
+  'four five six minus'
+  'one two three add'
+  'openpar zero closepar equal'
+}
+
+/*Numbers*/
+.zero{
+  grid-area: zero;
+  font-size: 1em;
+}
+.one{
+  grid-area: one;
+  font-size: 1em;
+}
+.two{
+  grid-area: two;
+  font-size: 1em;
+}
+.three{
+  grid-area: three;
+  font-size: 1em;
+}
+.four{
+  grid-area: four;
+  font-size: 1em;
+}
+.five{
+  grid-area: five;
+  font-size: 1em;
+}
+.six{
+  grid-area: six;
+  font-size: 1em;
+}
+.seven{
+  grid-area: seven;
+  font-size: 1em;
+}
+.eight{
+  grid-area: eight;
+  font-size: 1em;
+}
+.nine{
+  grid-area: nine;
+  font-size: 1em;
+}
+
+/* operators*/
+.add{
+  grid-area: add;
+  color: var(--operatorColor);
+}
+.minus{
+  grid-area: minus;
+  color: var(--operatorColor);
+}
+.multiply{
+  grid-area: multiply;
+  color: var(--operatorColor);
+}
+.divide{
+  grid-area: divide;
+  color: var(--operatorColor);
+}
+/*others*/
+.open-parenthesis{
+  grid-area: openpar;
+  color: var(--operatorColor);
+}
+.close-parenthesis{
+  grid-area: closepar;
+  color: var(--operatorColor);
+}
+.dot{
+  grid-area: dot;
+  color: var(--operatorColor);
+}
+.equal{
+  grid-area: equal;
+  color: var(--mainColor);
+  background-color: var(--operatorColor);
+  border-radius: 5px;
+}
+.clear{
+  grid-area: clear;
+  color: var(--operatorColor);
+}
+.delete{
+  grid-area: delete;
+  color: var(--operatorColor);
+
+}
+
+
+@media screen and (min-width: 767px){
+  body{
+    margin: 0 30%;
+  }
+  #history-ul-container{
+    height: 40%;
+  }
+}
+
+
+
+
+
+
+/*Animations*/
+
+.clockwise{
+  animation: rotate-clockwise .5s cubic-bezier(.25,.46,.33,.98);
+}
+.counter-clockwise{
+  animation: rotate-counter-clockwise .5s cubic-bezier(.25,.46,.33,.98);
+}
+
+
+
+@keyframes rotate-clockwise{
+  0%{
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(180deg)
+  }
+}
+@keyframes rotate-counter-clockwise{
+  100%{
+    transform: rotate(-180deg)
+  }
+}
+
+
