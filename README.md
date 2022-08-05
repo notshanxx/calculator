@@ -16,6 +16,6 @@ A calculator with
 
 
 Problems
-(Can't scroll the recent page vertically)
-(Spamming Parenthesis)
-(Not Resposive?)
+- (Not Resposive/ Bad Design)
+- (Can't scroll the recent page vertically)
+- (Spamming Parenthesis)
