@@ -13,9 +13,15 @@ body{
   color: var(--textColor);
   background-color: var(--textColor);
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .calculator-container{
   height: 100%;
@@ -43,8 +49,13 @@ body{
 #problem{
   height: 2em;
   width: 15em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   overflow: auto;
 }
 #problem, #result{
@@ -69,7 +80,10 @@ button{
 
 #setting{
   display: none;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
   padding: .5em 1em;
   top: 1.13em;
@@ -81,6 +95,8 @@ button{
 }
 
 .setting-style{
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
 }
 
@@ -118,8 +134,13 @@ button{
   border: 1px solid var(--textColor);
 }
 #history-ul{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 1em 2em;
 }
 #history-ul li{
@@ -143,8 +164,10 @@ button{
 
 
 .button-grid{
+  display: -ms-grid;
   display: grid;
-  grid-template: 
+  -ms-grid-rows: auto auto auto auto;
+      grid-template: 
   'clear delete dot divide '
   'seven eight nine multiply'
   'four five six minus'
@@ -154,87 +177,127 @@ button{
 
 /*Numbers*/
 .zero{
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
   grid-area: zero;
   font-size: 1em;
 }
 .one{
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
   grid-area: one;
   font-size: 1em;
 }
 .two{
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
   grid-area: two;
   font-size: 1em;
 }
 .three{
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
   grid-area: three;
   font-size: 1em;
 }
 .four{
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: four;
   font-size: 1em;
 }
 .five{
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
   grid-area: five;
   font-size: 1em;
 }
 .six{
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
   grid-area: six;
   font-size: 1em;
 }
 .seven{
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: seven;
   font-size: 1em;
 }
 .eight{
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
   grid-area: eight;
   font-size: 1em;
 }
 .nine{
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
   grid-area: nine;
   font-size: 1em;
 }
 
 /* operators*/
 .add{
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
   grid-area: add;
   color: var(--operatorColor);
 }
 .minus{
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
   grid-area: minus;
   color: var(--operatorColor);
 }
 .multiply{
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
   grid-area: multiply;
   color: var(--operatorColor);
 }
 .divide{
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
   grid-area: divide;
   color: var(--operatorColor);
 }
 /*others*/
 .open-parenthesis{
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
   grid-area: openpar;
   color: var(--operatorColor);
 }
 .close-parenthesis{
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
   grid-area: closepar;
   color: var(--operatorColor);
 }
 .dot{
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   grid-area: dot;
   color: var(--operatorColor);
 }
 .equal{
+  -ms-grid-row: 5;
+  -ms-grid-column: 4;
   grid-area: equal;
   color: var(--mainColor);
   background-color: var(--operatorColor);
   border-radius: 5px;
 }
 .clear{
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: clear;
   color: var(--operatorColor);
 }
 .delete{
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: delete;
   color: var(--operatorColor);
 
@@ -258,26 +321,49 @@ button{
 /*Animations*/
 
 .clockwise{
-  animation: rotate-clockwise .5s cubic-bezier(.25,.46,.33,.98);
+  -webkit-animation: rotate-clockwise .5s cubic-bezier(.25,.46,.33,.98);
+          animation: rotate-clockwise .5s cubic-bezier(.25,.46,.33,.98);
 }
 .counter-clockwise{
-  animation: rotate-counter-clockwise .5s cubic-bezier(.25,.46,.33,.98);
+  -webkit-animation: rotate-counter-clockwise .5s cubic-bezier(.25,.46,.33,.98);
+          animation: rotate-counter-clockwise .5s cubic-bezier(.25,.46,.33,.98);
+}
+
+
+
+@-webkit-keyframes rotate-clockwise{
+  0%{
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
+  }
+  100%{
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg)
+  }
 }
 
 
 
 @keyframes rotate-clockwise{
   0%{
-    transform: rotate(0deg)
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg)
   }
   100%{
-    transform: rotate(180deg)
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg)
+  }
+}
+@-webkit-keyframes rotate-counter-clockwise{
+  100%{
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg)
   }
 }
 @keyframes rotate-counter-clockwise{
   100%{
-    transform: rotate(-180deg)
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg)
   }
 }
-
 
