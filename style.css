@@ -24,6 +24,7 @@ body{
           justify-content: center;
 }
 .calculator-container{
+  position: relative;
   height: 100%;
   background-color: var(--mainColor);
   padding: 2em;
@@ -109,9 +110,9 @@ button{
 
 /* the button with setting icon */
 #open-setting{
-  position: fixed;
+  position: absolute;
   top: 1em;
-  right: 2em;
+  right: 1em;
   padding: .2em .4em .1em .4em;
   color: var(--mainColor);
   background-color: var(--textColor);
