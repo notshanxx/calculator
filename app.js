@@ -8,6 +8,9 @@ let question = ""
 let autoSolve = false
 let savedHistory = []
 
+
+
+//check if there's a past saved History
 let historyFromLocalStorage  = JSON.parse(localStorage.getItem("history"))
 
 if(historyFromLocalStorage){
@@ -203,14 +206,17 @@ function solve(){
   if(question === ""){
     result.textContent = ""
   }else{
-  result.textContent = `= ${eval(question)}`
-  savedHistory.push(`${displayQuestion} = ${eval(question)}`)
+  result.textContent = `= ${Function("return " + question)()}`
+  
+  //push the solved question
+  savedHistory.push(`${displayQuestion} = ${Function("return " + question)()}`)
+  //then set it to the localStorage
   localStorage.setItem("history", JSON.stringify(savedHistory))
   recentCalUl.innerHTML += `<li>${displayQuestion} <br/>= ${eval(question)}</li>`
   }
   
-  question = ""
-  displayQuestion = ""
+  question = `${Function("return " + question)()}`
+  displayQuestion = `${Function("return " + question)()}`
   problem.textContent = displayQuestion
 }
   
